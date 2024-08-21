@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Recommendation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://langgo.edu.vn/storage/upload/default/images/bai-viet/ielts-grammar-phan-biet-travel-trip-journey-tour-voyage-excursion-expedition-passage.jpg');
+            /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: rgba(4, 23, 77, 0.973);
+            text-align: center;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: rgba(255, 247, 247, 0.87);
+            opacity: 0.8;
+            /* Dark overlay for text readability */
+            margin: 0px auto;
+            width: 80%;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: rgba(26, 68, 185, 0.973);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 2em;
+        }
+
+        .social-icons a:hover {
+            color: rgba(28, 82, 231, 0.288);
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            position: sticky;
+            top: 5%;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar .search-bar {
+            float: left;
+            padding: 14px 16px;
+        }
+
+        .navbar input[type="text"] {
+            padding: 6px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .navbar button {
+            padding: 6px 12px;
+            margin-right: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .navbar button:hover {
+            background-color: #ddd;
+        }
+
+        .company-info {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .team {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .team-member img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .team-member p {
+            margin-bottom: 10px;
+            color: #777;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            width: 100%;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+
+        .recommendations {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .recommendation {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .recommendation img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .recommendation h3 {
+            margin-top: 15px;
+            font-size: 1.5em;
+        }
+
+        .recommendation p {
+            margin: 10px 0;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search for recommendations...">
+                <button id="searchButton">Search</button>
+                <button id="resetButton">Reset</button>
+            </div>
+        </div>
+        <div class="recommendations" id="recommendations">
+            <!-- Travel recommendations will be injected here by JavaScript -->
+        </div>
+
+        <h1>Welcome to Travel Recommendation</h1>
+        <p>Your one-stop destination for finding the best travel spots around the world. Explore our recommendations and
+            start planning your next adventure today!</p>
+
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank">🌐 Facebook</a>
+            <a href="https://twitter.com" target="_blank">🌐 Twitter</a>
+            <a href="https://instagram.com" target="_blank">🌐 Instagram</a>
+            <a href="https://linkedin.com" target="_blank">🌐 LinkedIn</a>
+        </div>
+        <h1>About Us</h1>
+
+        <div class="company-info">
+            <p>Welcome to Travel Recommendation! We are dedicated to helping travelers discover the best destinations
+                around the world. Our mission is to provide expert advice and recommendations so you can enjoy your
+                trips to the fullest.</p>
+        </div>
+
+        <h2>Meet Our Team</h2>
+        <div class="team">
+            <div class="team-member">
+                <img src="team-member1.jpg" alt="John Doe">
+                <h3>John Doe</h3>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="team-member2.jpg" alt="Jane Smith">
+                <h3>Jane Smith</h3>
+                <p>Chief Marketing Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="team-member3.jpg" alt="Emily Johnson">
+                <h3>Emily Johnson</h3>
+                <p>Lead Travel Advisor</p>
+            </div>
+            <div class="team-member">
+                <img src="team-member4.jpg" alt="Michael Brown">
+                <h3>Michael Brown</h3>
+                <p>Head of Product Development</p>
+            </div>
+        </div>
+        <h1>Contact Us</h1>
+
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="travel_recommendation.js"></script>
+</body>
+
+</html>
